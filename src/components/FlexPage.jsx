@@ -1,13 +1,10 @@
 import React from 'react';
 import PictureList from './PictureList';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function FlexPage() {
-  var flex = {
-    display: 'flex',
-    alignItems: 'stretch'
-  };
   return (
-    <div style={flex}>
+    <div className='container'>
       <PictureList/>
     </div>
   );

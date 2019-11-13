@@ -42,13 +42,18 @@ function PictureList() {
     };
     return pict;
   });
+  var flex = {
+    display: 'flex',
+    alignItems: 'stretch',
+    flexWrap: 'wrap'
+  };
   // var masterPictureList = images.map((img, index) =>
   //   { img: img,
   //     title: 'placeholder',
   //     username: 'userholder'
   //   });
   return (
-    <div>
+    <div style={flex}>
       {imageList.map((imageRef, index) => 
         <Picture img={imageRef.img} 
           title={imageRef.title} 
