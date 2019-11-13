@@ -4,11 +4,9 @@
         <meta charset="utf-8">
         <title><%= htmlWebpackPlugin.options.title %></title>
     </head>
-    <body>
-        <div class="container">
-            <% if (htmlWebpackPlugin.options.appMountId) { %>
-                <div id="<%= htmlWebpackPlugin.options.appMountId%>"></div>
-            <% } %>
-        </div>
+    <body style="background-color: black">
+        <% if (htmlWebpackPlugin.options.appMountId) { %>
+            <div id="<%= htmlWebpackPlugin.options.appMountId%>"></div>
+        <% } %>
     </body>
 </html>
