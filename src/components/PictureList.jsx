@@ -42,24 +42,37 @@ function PictureList() {
     };
     return pict;
   });
+  const iList1 = imageList.splice(0, Math.floor(imageList.length/2));
   var flex = {
     display: 'flex',
-    alignItems: 'stretch',
-    flexWrap: 'wrap'
+    flexFlow: 'column wrap',
+    alignContent: 'stretch',
+    width: '100%'
   };
+
   // var masterPictureList = images.map((img, index) =>
   //   { img: img,
   //     title: 'placeholder',
   //     username: 'userholder'
   //   });
   return (
-    <div style={flex}>
-      {imageList.map((imageRef, index) => 
-        <Picture img={imageRef.img} 
-          title={imageRef.title} 
-          username={imageRef.username} 
-          key={index}/>
-      )}
+    <div className='row'>
+      <div className='col' style={flex}>
+        {iList1.map((imageRef, index) => 
+          <Picture img={imageRef.img} 
+            title={imageRef.title} 
+            username={imageRef.username} 
+            key={index} float='right'/>
+        )}
+      </div>
+      <div className='col' style={flex}>
+        {imageList.map((imageRef, index) => 
+          <Picture img={imageRef.img} 
+            title={imageRef.title} 
+            username={imageRef.username} 
+            key={index}/>
+        )}
+      </div>
     </div>
   );
 }

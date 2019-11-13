@@ -3,22 +3,30 @@ import PropTypes from 'prop-types';
 
 function Picture(props) {
   var userDetailsStyle = {
-    position: 'relative',
-    top: '-50px',
-    backgroundColor: 'rgba(225,225,225,0.5)'
+    paddingLeft: '5px',
+    marginTop: '-55px'
   };
   var imgStyle = {
-    maxWidth: '300px'
+    width: '100%',
+    height: 'auto'
   };
   var margin = {
-    margin: '0'
+    margin: '0',
+    color: 'white'
   };
   var pictStyle = {
-    padding: '8px'
+    padding: '8px',
+    width: 'inherit'
   };
   return (
     <div style={pictStyle}>
-      <img src={props.img} style={imgStyle}/>
+      <style global jsx>{`
+        .col {
+          margin: 0;
+          padding: 0;
+        }
+      `}</style>
+      <img className={props.float} src={props.img} style={imgStyle}/>
       <div style={userDetailsStyle}>
         <h4 style={margin}>{props.title}</h4>
         <p style={margin}>{props.username}</p>
@@ -30,7 +38,8 @@ function Picture(props) {
 Picture.propTypes = {
   img: PropTypes.string,
   title: PropTypes.string,
-  username: PropTypes.string
+  username: PropTypes.string,
+  float: PropTypes.string
 };
 
 export default Picture;
